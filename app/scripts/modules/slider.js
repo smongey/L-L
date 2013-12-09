@@ -2,7 +2,6 @@ define(['jquery', 'swipe'], function() {
 	'use strict';
 
 
-
 	$('.bg').css({'height': $(window).height()});
 
 	$(window).resize(function(){
@@ -30,6 +29,14 @@ define(['jquery', 'swipe'], function() {
 	  transitionEnd: function(index, elem) {}
 	});
 
+
+	function slideTitlePosition() {
+
+			var sliderHeight = $('#slider').height() / 2 -30;
+			var slideTitle 	 = $('.slide-title');
+			$(slideTitle).css({'margin-top' : sliderHeight});
+
+	}
 
 
 });

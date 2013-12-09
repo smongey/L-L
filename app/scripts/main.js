@@ -1,41 +1,48 @@
 require.config({
-    paths: {
-        jquery: '../bower_components/jquery/jquery',
-        raphael: '../bower_components/raphael/raphael',
-        swipe: '../bower_components/swipe/swipe'
-	    },
-	    shim: {
-	    'localScroll': {
-	        deps: ['jquery', 'scrollTo'],
-	        exports: 'localScroll'
-	    }
+	paths: {
+		jquery: '../bower_components/jquery/jquery',
+		raphael: '../bower_components/raphael/raphael',
+		localScroll: "../bower_components/jquery.localScroll/jquery.localScroll",
+		scrollTo: "../bower_components/jquery.scrollTo/jquery.scrollTo",
+		swipe: '../bower_components/swipe/swipe',
+		packery: '../bower_components/packery/'
+
+		},
+	shim: {
+		'localScroll': {
+			deps: ['jquery', 'scrollTo'],
+			exports: 'localScroll'
+		}, 
+		'scrollTo': {
+			deps: ['jquery'],
+			exports: 'scrollTo'
+		}
 	}
 });
 
-require(['jquery', 'raphael', 'swipe', 'modules/app', 'modules/slider'], 
-	function ($, raphael, swipe, app, slider) {
-    'use strict';
+require(['jquery', 'raphael', 'localScroll', 'scrollTo', 'swipe', 'modules/app', 'modules/slider', 'modules/nav', 'modules/scrollButton'], 
+	function ($, raphael, localScroll, scrollTo, swipe, app, slider, nav, scrollButton) {
+	'use strict';
 
 
-    $(document).ready(function(){
+			$(document).ready(function(){
+					slideTitlePosition();
 
- 
-
-        $('.project-image img').each(function(){
-  
-        var minus =  $(this).height();
-        var margin =  minus / 2;
+			});
 
 
-        $(this).css('margin-top', '50%');
-        $(this).css('top', -margin);
+			$(window).on('resize', function(){
+						slideTitlePosition();
+			});
+					
 
-
-        });
-
-   
-
-    });
+			function slideTitlePosition() {
+			var sliderHeight = $('#slider').height() / 2 -30;
+			var slideTitle 	 = $('.slide-title');
+			$(slideTitle).css({'margin-top' : sliderHeight});
+			}
 
 
 });
+
+	

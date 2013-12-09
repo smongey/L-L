@@ -42,7 +42,7 @@ html, body,
 
 
 .first {
-    background: aqua url('http://placehold.it/1200x700/777777') no-repeat center center; 
+    background: url('http://placehold.it/1200x700/777777') no-repeat center center; 
    @include bg-cover;
 }
 
