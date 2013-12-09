@@ -2,8 +2,7 @@ require.config({
     paths: {
         jquery: '../bower_components/jquery/jquery',
         raphael: '../bower_components/raphael/raphael',
-        scrollTo: '../bower_components/jquery.scrollTo/jquery.scrollTo',
-        localScroll: '../bower_components/jquery.localScroll/jquery.localScroll'
+        swipe: '../bower_components/swipe/swipe'
 	    },
 	    shim: {
 	    'localScroll': {
@@ -13,9 +12,30 @@ require.config({
 	}
 });
 
-require(['modules/app', 'jquery', 'localScroll'], function (app, $, localScroll) {
+require(['jquery', 'raphael', 'swipe', 'modules/app', 'modules/slider'], 
+	function ($, raphael, swipe, app, slider) {
     'use strict';
 
-	console.log('main file loaded');
+
+    $(document).ready(function(){
+
+ 
+
+        $('.project-image img').each(function(){
+  
+        var minus =  $(this).height();
+        var margin =  minus / 2;
+
+
+        $(this).css('margin-top', '50%');
+        $(this).css('top', -margin);
+
+
+        });
+
+   
+
+    });
+
 
 });

@@ -1,0 +1,53 @@
+/* _slider.scss */
+
+@mixin background-image($location) {  background: url('{$location}') no-repeat center center fixed; }
+
+
+@mixin bg-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
+}
+
+html, body,
+.page-wrap {
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+
+}
+
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+
+
+.first {
+    background: aqua url('http://placehold.it/1200x700/777777') no-repeat center center; 
+   @include bg-cover;
+}
+
+.second {
+    background: url('http://placehold.it/1200x700/666666') no-repeat center center; 
+    @include bg-cover;
+}
+

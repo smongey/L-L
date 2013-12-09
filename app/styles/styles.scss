@@ -1,0 +1,223 @@
+/* styles.scss */
+
+@import 'compass/reset';
+@import 'slider';
+@import 'variables';
+
+
+@mixin type {
+	font-family: $font-stack;
+	font-weight: 200;
+	font-size: $reg-type;
+	color:$black;
+	text-decoration: none;
+	line-height: $line-height;
+}
+
+@mixin transition($duration) {
+    -webkit-transition:all $duration ease;
+    -moz-transition:all $duration ease;
+    -ms-transition:all $duration ease;
+    -o-transition:all $duration ease;
+    transition:all $duration ease;
+}
+
+@mixin column($width) {
+
+	position: relative;
+	width:  $width;
+	display: inline-block;
+
+	img {
+		max-width: 80%;
+		height: auto;
+		position: absolute;
+	}
+
+}
+
+
+
+
+
+@mixin caption {
+	@include type;
+	font-size:$caption-type;
+}
+
+@mixin small-type {
+	@include type;
+	font-size:$small-type;
+}
+
+@mixin regular-type {
+	@include type;
+	font-size:$reg-type;
+}
+
+@mixin large-type {
+	@include type;
+	font-size:$large-type;
+	line-height: 32px;
+}
+
+@mixin massive-type {
+	@include type;
+	font-size:$massive-type;
+}
+
+// - - - - - - - - - - - - - - - -  Page elements - - - - - - - - - - - - - - - - - //
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body {
+	@include type;
+}    
+
+.page-wrap {
+	// nothing should happen here till mobile
+}
+
+.content-wrap {
+	// handles centering on desktop
+	@include respond-to(handhelds) { width: 90%; }
+  	@include respond-to(medium-screens) { width: 85%; }
+  	@include respond-to(wide-screens) { width: 80%; max-width: 1600px; }
+	margin: 0 auto;
+}
+
+
+a, p, li, h1, h2, h3 {
+	@include type;
+	list-style:none;
+}
+
+
+
+.logo { 
+		position: absolute;
+		top: 0px;
+		left: calc(50% - 150px);
+		width: 300px;
+		text-align: center;
+	}
+
+.center {
+	// define element to work 
+	margin: 0 auto;
+}    
+
+
+nav {
+	
+	&.main-nav {
+	
+		padding: 30px 0px;
+
+		ul {
+
+			li {
+				display: inline;
+				margin-right : 16px;
+				
+				a {
+					@include small-type;
+				}
+			}
+		}
+	}
+
+	&.secondary-nav {
+
+		padding-bottom: 90px;
+
+		ul {
+			li {
+				margin-bottom: 3px;
+				a { 
+					@include large-type; 
+					color: $brown;
+				}
+			}
+		}
+		
+	}
+
+	a { 
+		@include transition(.3s);
+		border-bottom: solid 1px #fff;
+		 &:hover {
+		 	@include transition(.3s);
+		 	color: $brown;
+		 	border-bottom: solid 1px $brown;
+		 	padding-bottom: 3px;
+		 }
+
+	 } 
+
+}
+
+
+footer {
+	width: 100%;
+}
+
+
+aside {
+	float: left;
+	width: 25%;
+}
+
+.content {
+	float: left;
+	width: 75%;
+
+	&.full {
+		width: 100%;
+	}
+}
+
+
+.four {
+	@include column(25%);
+	height: 350px;
+}
+
+	
+.three {
+	@include column(33.33%);
+	height: 450px;
+}
+
+.two {
+	@include column(50%);
+	height: 550px;
+
+}
+
+.one {
+
+	position: relative;
+	width:  100%;
+	float: left;
+	height: 750px;
+	width: 100%;
+
+	img {
+		height: auto;
+		overflow: auto;
+		margin: auto;
+		position: absolute;
+		top: 0; left: 0; bottom: 0; right: 0;
+	}
+
+}
+
+
+.clear-fix {
+	clear: both;
+}
+
+

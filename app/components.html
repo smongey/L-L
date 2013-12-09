@@ -21,31 +21,43 @@
 
 
 
+<!-- page wrap for mobile and percent spacing -->
+<div class="page-wrap"> 
+        
+  
+<!-- absolute position this shit -->
 
-<div class="page-wrap">
-    
-<nav class="main-nav">
+
+<div id='slider' class='swipe'>
+  <div class='swipe-wrap'>
+    <div class="bg first"></div>
+     <div class="bg second"></div>
+  </div>
+</div>
+
+  <div style="position:fixed; right:50px; top:200px; display:block; background:red;" id="next" onclick="mySwipe.next()">></div>
+  <div style="position:fixed; left:50px;  top:200px; display:block; background:red;" id="prev" onclick="mySwipe.prev()"><</div>
+
+      <div class="content-wrap">
+            <div class="logo center"><a href="#">LAWRENCE AND LONG ARCHITECTS</a></div>
+        </div>
+
+
+<!-- content wrap to centre within desktop -->
+<div class="content-wrap">
+
+    <header class="container">
+
+        
+    <nav class="main-nav">
     <ul>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Practive</a></li>
         <li><a href="#">News</a></li>
     </ul>
-</nav>
+    </nav>
 
-    <section class="container">
-        <div class="logo"><a href="#">Logo</a></div>
-        
-        
-        <div id='slider' class='swipe'>
-          <div class='swipe-wrap'>
-            <div><img src="http://placekitten.com/g/200/300" alt=""></div>
-            <div><img src="http://placekitten.com/g/200/300" alt=""></div>
-            <div><img src="http://placekitten.com/g/200/300" alt=""></div>
-          </div>
-        </div>
-
-
-    </section>
+    </header>
 
     <section class="container">
         
@@ -62,8 +74,30 @@
             </nav>
         </aside>
 
-        <div class="content projects">
-            <h2 class="content-title">Projects</h2>
+        <div class="content projects" >
+
+        <div class="image-container">
+
+            
+
+        </div>
+
+
+<!-- 
+
+            <aside class="content-info">
+                <h3 class="content-title">Project title</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, quasi sapiente iste soluta perferendis ipsa magnam. Dicta, excepturi, sit cupiditate voluptatum reprehenderit adipisci atque magni saepe at nihil doloremque animi!</p>
+                
+                <ul class="aside-links">
+                    <li>Aside links 1</li>
+                    <li>Aside Links 2</li>
+                </ul>
+                    
+            </aside>
+
+            <h2 class="content-title-large">Projects</h2>
             <div class="project-images">
                 <ul>
                     <li>
@@ -98,11 +132,14 @@
                     </li>
                 </ul>
             </div>
-        </div>    
+        </div>   
+          -->
+    
+</div>
     </section>
 
 
-<footer>
+<footer class="clear-fix">
    
    <div class="social">
             <p class="social facebook"><a href="#">Facebook</a></p>
@@ -122,8 +159,12 @@
 
 </footer>
 
-</div>
 
+</div> 
+<!-- content-wrap -->
+
+</div>
+<!-- page wrap -->
 
 
         <!-- build:js scripts/main.js -->

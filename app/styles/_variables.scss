@@ -1,0 +1,35 @@
+$font-stack: "Swiss-721", "Helvetica-Neue", helvetica, arial, sans-serif; 
+
+$caption-type: 		12px;
+$small-type: 		14px;
+$reg-type: 			16px;                    
+$large-type: 		20px;
+$massive-type: 		60px;
+
+$line-height: 		22px;
+
+
+$brown: 			rgba(117, 102, 88, 1);
+$black: 			rgba(0, 0, 0, 1);
+$white: 			rgba(255, 255, 255, 1);
+
+
+$content-width: 		1200px;
+
+$break-small: 320px;
+$break-large: 1200px;
+
+
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+

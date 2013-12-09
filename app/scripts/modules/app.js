@@ -1,5 +1,5 @@
-define(['jquery', 'localScroll'], function($, localScroll) {
-	
-	$('body').css({'background': 'red'});
+define(['jquery'], function($) {
+
 	console.log('app file loaded');
+	
 });
