@@ -81,6 +81,20 @@ body {
   position: relative;
 }
 
+#container {
+
+	  &.fixed-top {
+      position: absolute;
+      top: 82px;
+
+		 .secondary-nav {
+			position: fixed;
+      		top: 82px; 
+		}
+
+    }
+}
+
 .page-wrap {
   // nothing should happen here till mobile
 }
@@ -121,6 +135,7 @@ a, p, li, h1, h2, h3 {
 	}
 
 }
+
 
 
 .logo {
@@ -187,10 +202,6 @@ nav {
         }
       }
     }
-    &.fixed-top {
-      position: fixed;
-      top: 82px;
-    }
   }
   a {
     @include transition(0.3s);
@@ -242,3 +253,34 @@ footer > * {
 .clear-fix {
   clear: both;
 }
+
+
+
+.item {  
+
+.project-thumbnail {
+    height: 0px;
+    text-align: center;
+
+    h3 { 
+    
+    @include regular-type;
+    padding: 16px 30px;
+    background: white;
+    display: inline-block;
+    text-align: center;
+
+
+  }
+
+}
+
+
+}
+
+
+    .w1 { background: aqua;  height: 350px;  width: 560px; }
+    .w2 { background: blue;  height: 500px;  width: 430px; }
+    .w3 { background: green; height: 470px;  width: 430px; }
+    .w4 { background: green; height: 650px;  width: 520px; }
+
