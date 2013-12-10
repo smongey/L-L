@@ -1,5 +1,3 @@
 define(['jquery'], function($) {
-
-	console.log('app file loaded');
-	
+    console.log('app file loaded');
 });

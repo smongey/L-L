@@ -113,7 +113,7 @@ body {
 
   @include respond-to(wide-screens) {
     width: 80%;
-    max-width: 1600px;
+    max-width: 1600px;                                                                                                                                                                  
   }
 
   margin: 0 auto;
@@ -157,6 +157,7 @@ h1 {
 .logo {
   background-image: url(../images/svg/logo.svg);
   position: absolute;
+  z-index: 300;
   top: 50px;
   left: calc(50% - 212px);
   width: 425px;
