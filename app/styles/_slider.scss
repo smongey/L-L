@@ -28,6 +28,7 @@ html, body,
   overflow: hidden;
   visibility: hidden;
   position: relative;
+  z-index: 300;
 }
 .swipe-wrap {
   overflow: hidden;

@@ -38,7 +38,7 @@ require(['jquery', 'raphael', 'localScroll', 'scrollTo', 'swipe', 'bridget', 'pa
 			  itemSelector: '.item',
 			  stamp: ".stamp",
 			  // columnWidth: ".grid-sizer",
-			  gutter: 50
+			  gutter: 60
 		});
 
 		$('.item').each(function() {
@@ -46,7 +46,7 @@ require(['jquery', 'raphael', 'localScroll', 'scrollTo', 'swipe', 'bridget', 'pa
 			var thumbHeight = $(this).height();
 			var projectTitle 	   = $('.project-title');
 
-			$(this).find('h3').css({'margin-top': ( ( thumbHeight / 2 ) - $(this).find('h3').height() )  })
+			$(this).find('h3').css({'margin-top': ( ( thumbHeight / 2 ) - $(this).find('h3').height() - 10 )  })
 
 		});
 
@@ -58,11 +58,11 @@ require(['jquery', 'raphael', 'localScroll', 'scrollTo', 'swipe', 'bridget', 'pa
 	});
 			
 
-	function slideTitlePosition() {
+function slideTitlePosition() {
 	var sliderHeight = $('#slider').height() / 2 -30;
 	var slideTitle 	 = $('.slide-title');
 	$(slideTitle).css({'margin-top' : sliderHeight});
-	}
+}
 
 });
 
