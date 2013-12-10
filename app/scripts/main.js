@@ -30,16 +30,32 @@ require(['jquery', 'raphael', 'localScroll', 'scrollTo', 'swipe', 'bridget', 'pa
 
 
     var duration = 400;
-    $('a[data-pjax]').pjax('#page', { 
-        fragment: '#page',
+    $('a[data-pjax]').pjax('#container', { 
+        fragment: '#container',
         duration: duration
     });
 
 
-    $('#page').bind('pjax:start', function() { 
+    $('#body-content').bind('pjax:start', function() { 
         $(this).fadeOut(duration); 
     }).bind('pjax:end', function() { 
         $(this).fadeIn(duration); 
     });
+
+
+
+    $(document).on('ready pjax:success', function() {
+
+
+          $('#body-content').packery({
+            itemSelector: '.item',
+            stamp: ".stamp",
+            gutter: 60
+        });
+
+    
+    })
+
+
 
 });

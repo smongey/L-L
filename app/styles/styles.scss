@@ -79,9 +79,9 @@ body {
   @include type;
 }
 
-.body-content {
-  position: relative;
-}
+// .body-content {
+//   position: relative;
+// }
 
 #container {
 
@@ -99,6 +99,19 @@ body {
 
 .page-wrap {
   // nothing should happen here till mobile
+}
+
+
+header {
+  width: 100%;
+  position: fixed;
+}
+
+.body-wrap {
+  background: white;
+  position: relative;
+  padding-top: 82px;
+  padding-bottom: 300px;
 }
 
 .center-wrap {
@@ -175,7 +188,7 @@ h1 {
 
 nav {
   &.main-nav {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     padding: 30px 0px;
     width: 80%;
@@ -194,6 +207,7 @@ nav {
     &.relative {
       position: relative;
       width: 100%;
+      margin-top: -82px;
       a {
         color: $black;
       }
@@ -234,7 +248,7 @@ nav {
 
 // Page elements
 
-aside {
+aside, .secondary-nav {
   float: left;
   width: 25%;
 }
@@ -275,8 +289,6 @@ footer > * {
 
 .item {  
 
-
-    
 
 
 .project-thumbnail {
@@ -323,8 +335,8 @@ img {
 }
 
 
-    .w1 { background: aqua;   width: 560px; height: 350px;  z-index: 300; }
-    .w2 { background: blue;   width: 430px; height: 500px;  z-index: 100; }
-    .w3 { background: green;  width: 430px; height: 470px;  z-index: 300; }
-    .w4 { background: green;  width: 520px; height: 650px;  z-index: 100; }
+    .w1 {  width: 560px; height: 350px;  z-index: 300; }
+    .w2 {  width: 430px; height: 500px;  z-index: 100; }
+    .w3 {  width: 430px; height: 470px;  z-index: 300; }
+    .w4 {  width: 520px; height: 650px;  z-index: 100; }
 

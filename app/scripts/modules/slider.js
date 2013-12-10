@@ -3,6 +3,9 @@ define(['jquery', 'swipe'], function() {
     $('.bg').css({
         'height': $(window).height()
     });
+
+    $('.body-wrap').css({top : $(window).height()})
+
     $(window).resize(function() {
         if ($(window).width() < 720) {
             $('.bg').css({
@@ -13,6 +16,8 @@ define(['jquery', 'swipe'], function() {
             $('.bg').css({
                 'height': $(window).height()
             });
+
+            $('.body-wrap').css({top : $(window).height()})
         }
     });
     window.mySwipe = new Swipe(document.getElementById('slider'), {

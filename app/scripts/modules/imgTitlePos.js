@@ -3,7 +3,7 @@ define(['jquery', 'packery'], function() {
 
 $(document).ready(function() {
         slideTitlePosition();
-        $('#container').packery({
+        $('#body-content').packery({
             itemSelector: '.item',
             stamp: ".stamp",
             gutter: 60
