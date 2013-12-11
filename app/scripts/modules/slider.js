@@ -1,10 +1,10 @@
 define(['jquery', 'swipe'], function() {
     'use strict';
-    $('.bg').css({
+    $('.bg, #header').css({
         'height': $(window).height()
     });
 
-    $('.body-wrap').css({top : $(window).height()})
+    $('#content').css({'margin-top' : $(window).height()})
 
     $(window).resize(function() {
         if ($(window).width() < 720) {
@@ -13,11 +13,13 @@ define(['jquery', 'swipe'], function() {
             });
         } else {
             // console.log('more than 720');
-            $('.bg').css({
+            $('.bg, #header').css({
                 'height': $(window).height()
             });
 
-            $('.body-wrap').css({top : $(window).height()})
+            $('#content').css({'margin-top' : $(window).height()})
+
+            
         }
     });
     window.mySwipe = new Swipe(document.getElementById('slider'), {

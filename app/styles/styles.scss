@@ -89,9 +89,10 @@ body {
       position: absolute;
       top: 82px;
 
-		 .secondary-nav {
+		 #secondary-nav {
 			position: fixed;
-      		top: 82px; 
+      		top: 82px;
+
 		}
 
     }
@@ -105,16 +106,26 @@ body {
 header {
   width: 100%;
   position: fixed;
+  z-index: 400;
 }
 
-.body-wrap {
+#content {
   background: white;
   position: relative;
   padding-top: 82px;
-  padding-bottom: 300px;
+  padding-left: 10%;
+  padding-right: 10%;
+  z-index: 400;
+  bottom: 0;
 }
 
-.center-wrap {
+#everything #container {
+
+margin: 0 2%;
+}
+
+
+.centering {
   // handles centering on desktop
   @include respond-to(handhelds) {
     width: 90%;
@@ -144,8 +155,8 @@ h1 {
     z-index: 200;
     position: fixed;
     @include massive-type;
-    width: 100%;
-    text-align: center;
+text-align: center;
+    padding: 0 33.33%;
     top: 50%;
   }
 
@@ -186,8 +197,9 @@ h1 {
 
 // Navigation styling
 
-nav {
-  &.main-nav {
+
+  #main-nav {
+
     position: fixed;
     bottom: 0px;
     padding: 30px 0px;
@@ -210,6 +222,13 @@ nav {
       margin-top: -82px;
       a {
         color: $black;
+        @include transition(0.3s);
+        border-bottom: solid 1px rgba(255,255,255,0.0);
+       &:hover {
+        @include transition(0.3s);
+        border-bottom: solid 1px $black;
+        padding-bottom: 5px;
+       }
       }
     }
     &.fixed-top {
@@ -221,7 +240,13 @@ nav {
       }
     }
   }
-  &.secondary-nav {
+
+  #secondary-nav {
+
+  display: none; 
+
+  z-index: 9999;
+
     position: relative;
     padding-bottom: 90px;
     ul {
@@ -233,10 +258,23 @@ nav {
         }
       }
     }
+ 
+
+&.inline { 
+  ul {
+    margin-top: -20px;
+    li { 
+      display: inline;  margin-right: 20px; 
+      a { @include small-type; color: $brown; }
+    }
   }
+
+}
+
+
   a {
     @include transition(0.3s);
-    border-bottom: solid 1px #fff;
+    border-bottom: solid 1px rgba(255,255,255,0.0);
     &:hover {
       @include transition(0.3s);
       color: $brown;
@@ -244,19 +282,23 @@ nav {
       padding-bottom: 3px;
     }
   }
+
 }
+
 
 // Page elements
 
-aside, .secondary-nav {
+.stamp {
   float: left;
   width: 25%;
 }
 
 footer {
-  width: 100%;
-  float: right;
-  margin: 200px 0 30px 0;
+background: white;
+position: relative;
+width: 100%;
+float: right;
+padding: 200px 0 30px 0;
 }
 
 footer > * {
@@ -288,8 +330,6 @@ footer > * {
 
 
 .item {  
-
-
 
 .project-thumbnail {
     height: 0px;
@@ -335,8 +375,29 @@ img {
 }
 
 
-    .w1 {  width: 560px; height: 350px;  z-index: 300; }
-    .w2 {  width: 430px; height: 500px;  z-index: 100; }
-    .w3 {  width: 430px; height: 470px;  z-index: 300; }
-    .w4 {  width: 520px; height: 650px;  z-index: 100; }
+.gutter-sizer {
+  width: 2%;
+}
+
+.grid-sizer {
+  width: 18.4%;
+}
+
+
+
+
+    .w1 { background: aqua;  width: 560px; height: 350px;  z-index: 300; margin-left: 0%; }
+    .w2 { background: aqua; width: 430px; height: 500px;  z-index: 100; margin-left: 1%; margin-top: 2%; }
+    .w3 { background: aqua; width: 430px; height: 470px;  z-index: 300; margin-left: 1%; }
+    .w4 {  width: 520px; height: 650px;  z-index: 100; margin-left: 1%; }
+
+    .thumb { background: aqua;  width: 21%; height: 280px;  z-index: 100; margin-top: 5%; 
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+    }
+
 

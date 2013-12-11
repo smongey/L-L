@@ -7,7 +7,8 @@ require.config({
         swipe: '../bower_components/swipe/swipe',
         bridget: '../bower_components/jquery-bridget/jquery.bridget',
         packery: '../bower_components/packery/js/packery',
-        pjax:     '../bower_components/jquery-pjax/jquery.pjax'
+        pjax:     '../bower_components/jquery-pjax/jquery.pjax',
+        imagesLoaded: '../bower_components/imagesloaded/imagesloaded'
     },
     shim: {
         'localScroll': {
@@ -24,37 +25,149 @@ require.config({
         }
     }
 });
-require(['jquery', 'raphael', 'localScroll', 'scrollTo', 'swipe', 'bridget', 'packery', 'pjax', 'modules/app', 'modules/slider', 'modules/nav', 'modules/scrollButton', 'modules/imgTitlePos'], 
-	function($, raphael, localScroll, scrollTo, swipe, bridget, packery, pjax, app, slider, nav, scrollButton, imgTitlePos) {
+require(['jquery', 'raphael', 'localScroll', 'scrollTo', 'swipe', 'bridget', 'packery', 'imagesLoaded', 'pjax', 'modules/app', 'modules/slider', 'modules/nav', 'modules/scrollButton', 'modules/slideTitle'], 
+	function($, raphael, localScroll, scrollTo, swipe, bridget, packery, imagesLoaded, pjax, app, slider, nav, scrollButton, slideTitle) {
     'use strict';
 
 
-    var duration = 400;
-    $('a[data-pjax]').pjax('#container', { 
-        fragment: '#container',
-        duration: duration
+// document ready
+
+    $(document).ready(function() {
+
+            $('#container').packery({
+                itemSelector: '.item',
+                stamp: ".stamp",
+                gutter: 60
+            });
+
+             $('.item').each(function() {
+                 var thumbHeight = $(this).height();
+                 var projectTitle = $('.project-title');
+                 $(this).find('h3').css({
+                     'margin-top': ((thumbHeight / 2) - $(this).find('h3').height() - 10)
+                 })
+             });
+
+             var duration = 400;
+            $('a[data-pjax]').pjax('#pjaxContainer', { 
+                fragment: '#pjaxContainer',
+                duration: duration
+            }).bind('click', function(e){
+                e.preventDefault();
+            });
+
+
+            $('a[href*=#]:not([href=#])').click(function() {
+                var target = $(this.hash);
+                if ($('#main-nav').hasClass('fixed-top')) {
+                    
+
+                $('#header').css({'margin-top': 0});
+                $('#content').animate({'margin-top': $(window).height()}, 1000);
+
+
+                } else {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top + 1
+                    }, 500);
+                }
+                return false;
+            });
+
+
+     
+     });
+
+
+
+//  on scroll
+
+    $(window).on('scroll', function() {
+        
+            var mainNav = $('#main-nav');
+            var pageOffset = window.pageYOffset;
+            var elemHeight = $('#content').offset().top;
+
+            if(pageOffset > elemHeight) {
+                console.log('yep');
+                $(window).off('scroll');
+                 $(window).off('resize');
+
+
+                 showNavTop();
+                
+
+                $('#header').animate({'margin-top': -($(window).height())}, 0);
+                $('#content').addClass('top').animate({'margin-top': 0}, 0, function(){
+                    $(window).scrollTo(0, 0);
+                });
+            } else if ($(window).scrollTop() > 10 ) { // if my body scrolls more than 10 give my main nav a relative position
+
+                $(mainNav).addClass('relative');
+
+            } else {
+                 $(mainNav).removeClass('relative');
+            }
+
     });
 
 
-    $('#body-content').bind('pjax:start', function() { 
-        $(this).fadeOut(duration); 
-    }).bind('pjax:end', function() { 
-        $(this).fadeIn(duration); 
+
+
+
+
+
+// pjax bind
+
+                var duration = 400;
+
+                $('#pjaxContainer').bind('pjax:start', function() { 
+                    $(this).fadeOut(duration);
+
+                    
+                    $('#secondary-nav').fadeOut();
+
+
+                }).bind('pjax:end', function() { 
+                    $(this).fadeIn(duration); 
+                });
+
+
+// document on
+
+$(document).on('pjax:success', function() {
+
+$('.item').hide();
+
+$('#secondary-nav').addClass('inline').fadeIn();
+
+// initialize Packery after all images have loaded
+            setTimeout(function(){
+
+                    $('#container').packery({
+                        itemSelector: '.item',
+                        stamp: ".stamp",
+                        gutter: 60,
+
+                    });
+                $(window).trigger('resize');
+                $('.item').show();
+
+            }, 1000);
+
     });
 
 
+function showNavTop() {
 
-    $(document).on('ready pjax:success', function() {
+                 $('#main-nav').removeClass('relative').addClass('fixed-top');
+                 $('#secondary-nav').css({position: 'fixed', top: 82}).fadeIn(300);
 
+                 $('a.top-button').fadeOut(function(){
+                    $(this).text('Top').fadeIn().attr('href', '#down');
+                 })
 
-          $('#body-content').packery({
-            itemSelector: '.item',
-            stamp: ".stamp",
-            gutter: 60
-        });
-
-    
-    })
+}
 
 
 

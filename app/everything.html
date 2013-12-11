@@ -4,154 +4,184 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>landl</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.tmp) styles/styles.css -->
-    <link rel="stylesheet" href="styles/styles.css">
-    <!-- endbuild -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>landl</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css(.tmp) styles/styles.css -->
+	<link rel="stylesheet" href="styles/styles.css">
+	<!-- endbuild -->
 </head>
-<body>
-<!-- <h1 class="page-title">Projects</h1> -->
+<body id="everything">
+	<!-- <h1 class="page-title">Projects</h1> -->
 
-<!-- page wrap for mobile and percent spacing -->
-
-<div class="page-wrap">
-    <!-- Slider is below -->
-
-<header class="header">
-
-    <div class='swipe' id='slider'>
-        <div class='swipe-wrap'>
-            <div class="bg first">
-                <div class="slide-title">
-                    <h2>Slide Title 1</h2>
-                </div>
-            </div>
-
-            <div class="bg second">
-                <div class="slide-title">
-                    <h2>Slide Title 2</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="center-wrap">
-        <a class="logo"></a>
-    </div><!-- this wrap to center elements on desktop -->
-
-</header>
+	<!-- page wrap for mobile and percent spacing -->
 
 
-<div class="body-wrap">
+	<!-- Slider is below -->
 
-    <div class="center-wrap">
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#">Projects</a></li>
+	<header id="header">
+		<div class='swipe' id='slider'>
+			<div class='swipe-wrap'>
+				<div class="bg first">
+					<div class="slide-title">
+						<h2>Slide Title 1</h2>
+					</div>
+				</div>
 
-                <li><a href="#">Practice</a></li>
-
-                <li><a href="#">News</a></li>
-
-                <li class="right"><a class="right active top-button" href="#body-content">See More</a></li>
-            </ul>
-        </nav>
-
-
-        <section class="body-content" id="body-content">
-
-            <div id="container">
+				<div class="bg second">
+					<div class="slide-title">
+						<h2>Slide Title 2</h2>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-                    <nav class="secondary-nav stamp">
-                        <ul>
-                            <li><a data-pjax href="everything.html">Everything</a></li>
+		<div id="logo">
+			<a class="logo"></a>
+		</div>
 
-                            <li><a data-pjax href="index.html">Residential</a></li>
 
-                            <li><a href="#">Commerical</a></li>
+	</header>
 
-                            <li><a href="#">Conservation</a></li>
 
-                            <li><a href="#">Education</a></li>
+		
+		<section id="content">
 
-                            <li><a href="#">Public Buildings</a></li>
-                        </ul>
-                    </nav>
-         
 
-                <div class="item w1">
-                    <div class="project-thumbnail">
-                    <h3 class="project-title">Project Title</h3><img alt="" src="http://placehold.it/560x350"></div>
-                </div>
+			<nav id="main-nav" >
+				<ul>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">Practice</a></li>
+					<li><a href="#">News</a></li>
+					<li class="right"><a class="right active top-button" href="#content">See More</a></li>
+				</ul>
+			</nav>
 
-                <div class="item w2">
-                    <div class="project-thumbnail">
-                    <h3 class="project-title">Project Title</h3><img alt="" src="http://placehold.it/430x500"></div>
-                </div>
+			<nav id="secondary-nav" class="inline">
+				<ul>
+					<li><a data-pjax href="everything.html">Everything</a></li>
+					<li><a data-pjax href="index.html">Residential</a></li>
+					<li><a href="#">Commerical</a></li>
+					<li><a href="#">Conservation</a></li>
+					<li><a href="#">Education</a></li>
+					<li><a href="#">Public Buildings</a></li>
+				</ul>
+			</nav>
 
-                <div class="item w3">
-                    <div class="project-thumbnail">
-                    <h3 class="project-title">Project Title</h3><img alt="" src="http://placehold.it/430x470"></div>
-                </div>
+	<div id="pjaxContainer">
 
-                <div class="item w4">
-                    <div class="project-thumbnail">
-                    <h3 class="project-title">Project Title</h3><img alt="" src="http://placehold.it/520x650"></div>
-                </div>
 
-                <div class="item w1">
-                    <div class="project-thumbnail">
-                    <h3 class="project-title">Project Title</h3><img alt="" src="http://placehold.it/560x350"></div>
-                </div>
+	<h1 class="page-title">Everything</h1>	
 
-                <div class="item w3">
-                    <div class="project-thumbnail">
-                    <h3 class="project-title">Project Title</h3><img alt="" src="http://placehold.it/430x470"></div>
-                </div>
+			<div id="container">
 
-                <div class="item w4">
-                    <div class="project-thumbnail">
-                    <h3 class="project-title">Project Title</h3><img alt="" src="http://placehold.it/520x650"></div>
-                </div>
-  
+				
 
-        </div>
+				<!-- <div class="stamp"></div> -->
 
-        </section>
-   
+				<ul>
+					<li class="gutter-sizer"></li>
+    <li class="grid-sizer"></li>
 
-        <footer class="clear-fix">
-            <div class="social">
-                <p class="social facebook"><a href="#">Facebook</a></p>
+					<li class="item thumb">
+						<div class="project-thumbnail">
+							<img alt="" src="http://placehold.it/280x280"></div>
+						</li>
 
-                <p class="social twitter"><a href="#">Twitter</a></p>
-            </div>
+						<li class="item thumb">
+							<div class="project-thumbnail">
+								<img alt="" src="http://placehold.it/280x280"></div>
+							</li>
 
-            <address>
-                <p>43 Fitzwilliam Square,</p>
+							<li class="item thumb">
+								<div class="project-thumbnail">
+									<img alt="" src="http://placehold.it/280x280"></div>
+								</li>
 
-                <p>Dublin 2, Ireland</p>
-            </address>
+								<li class="item thumb">
+									<div class="project-thumbnail">
+										<img alt="" src="http://placehold.it/280x280"></div>
+									</li>
 
-            <div class="contact">
-                <p>T. +353 1 661 9206</p>
+									<li class="item thumb">
+										<div class="project-thumbnail">
+											<img alt="" src="http://placehold.it/280x280"></div>
+										</li>
 
-                <p><a href="mailto:info@lawrenceandlong?subject=hello">E. info@lawrenceandlong.com</a></p>
-            </div>
-        </footer>
-    </div><!-- content-wrap -->
+										<li class="item thumb">
+											<div class="project-thumbnail">
+												<img alt="" src="http://placehold.it/280x280"></div>
+											</li>
 
-</div>
+											<li class="item thumb">
+												<div class="project-thumbnail">
+													<img alt="" src="http://placehold.it/280x280"></div>
+												</li>
 
-</div><!-- page wrap -->
-<!-- build:js scripts/main.js -->
-<script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
-<!-- endbuild -->
+														<li class="item thumb">
+										<div class="project-thumbnail">
+											<img alt="" src="http://placehold.it/280x280"></div>
+										</li>
+
+										<li class="item thumb">
+											<div class="project-thumbnail">
+												<img alt="" src="http://placehold.it/280x280"></div>
+											</li>
+
+											<li class="item thumb">
+												<div class="project-thumbnail">
+													<img alt="" src="http://placehold.it/280x280"></div>
+												</li>
+
+													<li class="item thumb">
+											<div class="project-thumbnail">
+												<img alt="" src="http://placehold.it/280x280"></div>
+											</li>
+
+											<li class="item thumb">
+												<div class="project-thumbnail">
+													<img alt="" src="http://placehold.it/280x280"></div>
+												</li>
+
+
+											</ul>
+
+										</div> 
+
+		</div>
+									
+
+								
+								</section>
+
+									<footer class="clear-fix">
+											<div class="social">
+												<p class="social facebook"><a href="#">Facebook</a></p>
+												<p class="social twitter"><a href="#">Twitter</a></p>
+											</div>
+
+											<address>
+												<p>43 Fitzwilliam Square,</p>
+
+												<p>Dublin 2, Ireland</p>
+											</address>
+
+											<div class="contact">
+												<p>T. +353 1 661 9206</p>
+
+												<p><a href="mailto:info@lawrenceandlong?subject=hello">E. info@lawrenceandlong.com</a></p>
+											</div>
+										</footer>
+
+						
+
+
+	<!-- build:js scripts/main.js -->
+	<script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

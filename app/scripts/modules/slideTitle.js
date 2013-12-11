@@ -3,11 +3,7 @@ define(['jquery', 'packery'], function() {
 
 $(document).ready(function() {
         slideTitlePosition();
-        $('#body-content').packery({
-            itemSelector: '.item',
-            stamp: ".stamp",
-            gutter: 60
-        });
+        
         $('.item').each(function() {
             var thumbHeight = $(this).height();
             var projectTitle = $('.project-title');
