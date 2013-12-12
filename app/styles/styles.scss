@@ -1,7 +1,4 @@
 /* styles.scss */
-
-// z-index starts at 100
-
 @import "compass/reset";
 @import "compass/css3/transform";
 @import "slider";
@@ -84,24 +81,15 @@ body {
 // }
 
 #container {
-
-	  &.fixed-top {
-      position: absolute;
+  &.fixed-top {
+    position: absolute;
+    top: 82px;
+    #secondary-nav {
+      position: fixed;
       top: 82px;
-
-		 #secondary-nav {
-			position: fixed;
-      		top: 82px;
-
-		}
-
     }
+  }
 }
-
-.page-wrap {
-  // nothing should happen here till mobile
-}
-
 
 header {
   width: 100%;
@@ -120,10 +108,8 @@ header {
 }
 
 #everything #container {
-
-margin: 0 2%;
+  margin: 0 2%;
 }
-
 
 .centering {
   // handles centering on desktop
@@ -137,7 +123,7 @@ margin: 0 2%;
 
   @include respond-to(wide-screens) {
     width: 80%;
-    max-width: 1600px;                                                                                                                                                                  
+    max-width: 1600px;
   }
 
   margin: 0 auto;
@@ -148,35 +134,27 @@ a, p, li, h1, h2, h3 {
   list-style: none;
 }
 
-
 h1 {
-
   &.page-title {
     z-index: 200;
     position: fixed;
     @include massive-type;
-text-align: center;
+    text-align: center;
     padding: 0 33.33%;
     top: 50%;
   }
-
 }
 
 .slide-title {
-
-	text-align: center;
-	width: auto;
-
-	h2 {
-		font-size: 24px;
-		padding: 28px 45px 25px 45px;
-		background: white;
-		display: inline-block;
-	}
-
+  text-align: center;
+  width: auto;
+  h2 {
+    font-size: 24px;
+    padding: 28px 45px 25px 45px;
+    background: white;
+    display: inline-block;
+  }
 }
-
-
 
 .logo {
   background-image: url(../images/svg/logo.svg);
@@ -197,84 +175,78 @@ text-align: center;
 
 // Navigation styling
 
-
-  #main-nav {
-
-    position: fixed;
-    bottom: 0px;
-    padding: 30px 0px;
-    width: 80%;
-    z-index: 9999;
-    ul {
-      li {
-        display: inline;
-        margin-right: 16px;
-        a {
-          @include small-type;
-          border-bottom: none;
-          color: white;
-        }
-      }
-    }
-    &.relative {
-      position: relative;
-      width: 100%;
-      margin-top: -82px;
+#main-nav {
+  position: fixed;
+  bottom: 0px;
+  padding: 30px 0px;
+  width: 80%;
+  z-index: 9999;
+  ul {
+    li {
+      display: inline;
+      margin-right: 16px;
       a {
-        color: $black;
-        @include transition(0.3s);
-        border-bottom: solid 1px rgba(255,255,255,0.0);
-       &:hover {
-        @include transition(0.3s);
-        border-bottom: solid 1px $black;
-        padding-bottom: 5px;
-       }
-      }
-    }
-    &.fixed-top {
-      position: fixed;
-      top: 0px;
-      bottom: initial;
-      a {
-        color: $black;
+        @include small-type;
+        border-bottom: none;
+        color: white;
       }
     }
   }
-
-  #secondary-nav {
-
-  display: none; 
-
-  z-index: 9999;
-
+  &.relative {
     position: relative;
-    padding-bottom: 90px;
+    width: 100%;
+    margin-top: -82px;
+    a {
+      color: $black;
+      @include transition(0.3s);
+      border-bottom: solid 1px rgba(255, 255, 255, 0);
+      &:hover {
+        @include transition(0.3s);
+        border-bottom: solid 1px $black;
+        padding-bottom: 5px;
+      }
+    }
+  }
+  &.fixed-top {
+    position: fixed;
+    top: 0px;
+    bottom: initial;
+    a {
+      color: $black;
+    }
+  }
+}
+
+#secondary-nav {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  padding-bottom: 90px;
+  ul {
+    li {
+      margin-bottom: 3px;
+      a {
+        @include large-type-20;
+        color: $brown;
+      }
+    }
+  }
+  &.inline {
     ul {
+      margin-top: -20px;
       li {
-        margin-bottom: 3px;
+        display: inline;
+        margin-right: 20px;
         a {
-          @include large-type-20;
+          @include small-type;
           color: $brown;
         }
       }
     }
- 
-
-&.inline { 
-  ul {
-    margin-top: -20px;
-    li { 
-      display: inline;  margin-right: 20px; 
-      a { @include small-type; color: $brown; }
-    }
   }
-
-}
-
-
   a {
     @include transition(0.3s);
-    border-bottom: solid 1px rgba(255,255,255,0.0);
+    border-bottom: solid 1px rgba(255, 255, 255, 0);
     &:hover {
       @include transition(0.3s);
       color: $brown;
@@ -282,9 +254,7 @@ text-align: center;
       padding-bottom: 3px;
     }
   }
-
 }
-
 
 // Page elements
 
@@ -294,11 +264,11 @@ text-align: center;
 }
 
 footer {
-background: white;
-position: relative;
-width: 100%;
-float: right;
-padding: 200px 0 30px 0;
+  background: white;
+  position: relative;
+  width: 100%;
+  float: right;
+  padding: 200px 0 30px 0;
 }
 
 footer > * {
@@ -329,75 +299,90 @@ footer > * {
 
 
 
-.item {  
+// items for packery
 
-.project-thumbnail {
+.item {
+  .project-thumbnail {
     height: 0px;
     text-align: center;
-
-      
-      &:hover {
-  
-        h3 {
-          opacity: 1;
-          @include transition(0.3s);
-        }
-
+    &:hover {
+      h3 {
+        opacity: 1;
+        @include transition(0.3s);
       }
-    
-
-    h3 { 
-    
-    @include transition(0.5s);
-
-    position: relative;
-    z-index: 9999;
-    @include regular-type;
-    padding: 18px 30px 16px 30px;
-    background: white;
-    display: inline-block;
-    text-align: center;
-    opacity: 0;
-
-
-  }
-
-img {
-  position: absolute;
-  left: 0;
-  top: 0;
-
-}
-
-}
-
-
-}
-
-
-.gutter-sizer {
-  width: 2%;
-}
-
-.grid-sizer {
-  width: 18.4%;
-}
-
-
-
-
-    .w1 { background: aqua;  width: 560px; height: 350px;  z-index: 300; margin-left: 0%; }
-    .w2 { background: aqua; width: 430px; height: 500px;  z-index: 100; margin-left: 1%; margin-top: 2%; }
-    .w3 { background: aqua; width: 430px; height: 470px;  z-index: 300; margin-left: 1%; }
-    .w4 {  width: 520px; height: 650px;  z-index: 100; margin-left: 1%; }
-
-    .thumb { background: aqua;  width: 21%; height: 280px;  z-index: 100; margin-top: 5%; 
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-
     }
+    h3 {
+      @include transition(0.5s);
+      position: relative;
+      z-index: 9999;
+      @include regular-type;
+      padding: 18px 30px 16px 30px;
+      background: white;
+      display: inline-block;
+      text-align: center;
+      opacity: 0;
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
 
 
+// Adds a grid for packery
+
+// .gutter-sizer {
+//   width: 2%;
+// }
+
+// .grid-sizer {
+//   width: 18.4%;
+// }
+
+// 
+
+.w1 {
+  background: aqua;
+  width: 560px;
+  height: 350px;
+  z-index: 300;
+  margin-left: 0%;
+}
+
+.w2 {
+  background: aqua;
+  width: 430px;
+  height: 500px;
+  z-index: 100;
+  margin-left: 1%;
+  margin-top: 2%;
+}
+
+.w3 {
+  background: aqua;
+  width: 430px;
+  height: 470px;
+  z-index: 300;
+  margin-left: 1%;
+}
+
+.w4 {
+  width: 520px;
+  height: 650px;
+  z-index: 100;
+  margin-left: 1%;
+}
+
+.thumb {
+  background: aqua;
+  width: 21%;
+  height: 280px;
+  z-index: 100;
+  margin-top: 5%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
